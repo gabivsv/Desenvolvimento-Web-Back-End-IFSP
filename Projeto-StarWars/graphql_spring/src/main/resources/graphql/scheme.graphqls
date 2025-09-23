@@ -1,0 +1,52 @@
+# ===============================
+# Interfaces e Tipos
+# ===============================
+
+interface Character {
+    id: ID!
+    name: String!
+    friends: [Character]
+}
+
+type Human implements Character {
+    id: ID!
+    name: String!
+    height: Float
+    friends: [Character]
+}
+
+type Droid implements Character {
+    id: ID!
+    name: String!
+    primaryFunction: String
+    friends: [Character]
+}
+
+type Starship {
+    id: ID!
+    name: String!
+    length: Float
+}
+
+# ===============================
+# Queries
+# ===============================
+
+type Query {
+    humans: [Human!]!
+    droids: [Droid!]!
+    starships: [Starship!]!
+    character(id: ID!): Character
+    heroes: [Human!]!
+}
+
+# ===============================
+# Mutations
+# ===============================
+
+type Mutation {
+    createHuman(id: ID!, name: String!, height: Float): Human
+    createDroid(id: ID!, name: String!, primaryFunction: String): Droid
+    createStarship(id: ID!, name: String!, length: Float): Starship
+    addFriend(characterId: ID!, friendId: ID!): Character
+}
