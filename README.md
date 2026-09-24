@@ -30,7 +30,7 @@ DESENVOLVIMENTO-WEB-BACK-END-IFSP/
 ├── Projeto-StarWars/
 │   └── graphql_spring/
 │
-├── Análise de Threads/
+├── Thread_Group_Analise.pdf/
 │
 └── README.md
 ```
